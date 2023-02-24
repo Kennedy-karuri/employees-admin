@@ -1,0 +1,18 @@
+{
+    "name": "ken/assesment7",
+    "description": "This is a plugin with admin and sub pages",
+    "type": "project",
+    "license": "GPL v2 or later",
+    "autoload": {
+        "psr-4": {
+            "Inc\\": "./inc"
+        }
+    },
+    "authors": [
+        {
+            "name": "Kennedy Karuri"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}

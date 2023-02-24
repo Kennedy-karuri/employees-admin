@@ -12,6 +12,7 @@ namespace Inc;
         return[
                 Base\Controller::class,
                 Base\Enqueue::class,
+                Pages\Admin::class,
               
         ];
 

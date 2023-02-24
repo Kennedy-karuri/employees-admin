@@ -1,23 +1,51 @@
 <?php
 /**
- *  @package assesment7
+ * @package assesment7
  */
 
-namespace Inc\Pages;
+ namespace Inc\Pages;
 
-use \Inc\Base\Controller;
+ use \Inc\Api\SettingsApi;
 
-class Admin extends Controller{
+ 
+ class Admin{
 
-    function register(){
-        add_action('admin_menu', array($this, 'add_admin_pages'));
-    }
+   public $settings;
 
-    function add_admin_pages(){
-        add_menu_page('assesment7', 'assesment7', 'manage_options', 'assesment7', array($this, 'admin_index'), 'dashicons-admin-generic', 110);
-    }
+   public $callbacks;
 
-    function admin_index(){
-        require_once $this->plugin_path . 'templates/main.php';  
-    }
+   public $pages = array();
+
+   public $subpages = array();
+
+   public function register(){
+      $this->settings = new SettingsApi();
+
+    
+
+      $this->setPages();
+
+   
+
+     
+   }
+
+  public function setPages(){
+
+   $this->pages = array(
+      [
+      'page_title'   =>    'Assesment7',
+      'menu_title'   =>    'Assesment7',
+      'capability'   =>    'manage_options',
+      'menu_slug'    =>    'Assesment_7',
+      'callback'     =>    array( $this->callbacks, 'adminDashboard' ),
+      'icon_url'     =>    'dashicons-admin-site-alt',
+      'position'     =>    110
+      ]
+
+   );
+
+  }
+ 
+
 }

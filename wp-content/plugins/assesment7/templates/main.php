@@ -1,1 +1,1 @@
-<h1>This is coocjf</h1>
+<h1>This is my admin page</h1>

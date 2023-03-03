@@ -1,20 +1,10 @@
 <?php
-//ADDING NEW LOGIN URL
-
-// function new_login_url($loginURL){
-//     $loginURL = site_url('ken', 'login');
-//     return $loginURL;
-//  }
-
-//  add_filter('login_url', 'new_login_url');
-
-
 
  function attempted_login($user, $username, $password){
     if(get_transient('login_attempt')){
         $datas = get_transient('login_attempt');
 
-        if ($datas['tried'] >= 3){
+        if ($datas['tried'] >= 5){
             $until = get_option('_transient_timeout_' . 'login_attempt');
             $time = time_to_go($until);
 

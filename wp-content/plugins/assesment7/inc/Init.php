@@ -13,7 +13,7 @@ namespace Inc;
                 Base\Controller::class,
                 Base\Enqueue::class,
                 Pages\Admin::class,
-                // Base\GetEmployee::class,
+                Base\GetEmployee::class,
               
         ];
 

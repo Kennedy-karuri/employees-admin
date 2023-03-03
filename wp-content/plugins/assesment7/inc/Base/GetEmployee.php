@@ -12,7 +12,7 @@
             $this->create_table_to_db();
             $this->pass_to_db();
         }
-                public function create_table_to_db()
+                 function create_table_to_db()
         {
             global $wpdb;
 
@@ -29,7 +29,7 @@
             dbDelta($employee);
         }
 
-        public function pass_to_db()
+         public function pass_to_db()
         {
     if (isset($_POST['submitdata'])) {
         $data = array(

@@ -18,7 +18,7 @@
             $until = get_option('_transient_timeout_' . 'login_attempt');
             $time = time_to_go($until);
 
-            return new WP_Error('too_many_attempts', sprintf(__('<strong>ERROR</strong>: Too many trials, please try after %1$s'), $time));
+            return new WP_Error('too_many_attempts', sprintf(__('<strong>ERROR</strong>: Too many trials, please try again after %1$s'), $time));
         }
     }
 
@@ -32,13 +32,13 @@ function failed_login($username){
         $datas = get_transient('login_attempt');
         $datas['tried']++;
 
-        if ($datas['tried'] <= 3)
-            set_transient('login_attempt', $datas, 300);
+        if ($datas['tried'] <= 5)
+            set_transient('login_attempt', $datas, 180);
         }else{
             $datas = array(
                 'tried' => 1
             );
-            set_transient ('login_attempt', $datas, 300);
+            set_transient ('login_attempt', $datas, 180);
         }
           
     

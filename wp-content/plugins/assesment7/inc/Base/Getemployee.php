@@ -17,7 +17,7 @@
             global $wpdb;
 
             $table_name= $wpdb->prefix.'register';
-             $charset= $wpdb->get_charset_collate();
+            $charset= $wpdb->get_charset_collate();
 
             $employee="CREATE TABLE IF NOT EXISTS ".$table_name."(
                 username text NOT NULL,
@@ -41,8 +41,6 @@
         global $wpdb;
         $table_name=$wpdb->prefix.'register';
         $result=$wpdb->insert($table_name, $data, $format=null);
-        $this->create_table_to_db();
-        $this->pass_to_db();
 
         if ($result == true) {
             echo "<script>alert('Employee saved successfully')</script>";
@@ -54,4 +52,3 @@
 
 }
 
-   
